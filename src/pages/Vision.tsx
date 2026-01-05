@@ -1,5 +1,6 @@
 import { Target, Lightbulb, Users, CheckCircle2, Award, Zap } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -25,13 +26,18 @@ const itemVariants: Variants = {
 
 export default function Vision() {
     return (
-        <div className="min-h-screen bg-background pb-32">
-            {/* Powerful Hero Header */}
-            <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-primary">
+        <div className="min-h-screen bg-background w-full pb-32">
+            <SEO
+                title="رؤيتنا ورسالتنا"
+                description="اكتشف رؤية مركز المساعد المبدع نحو الريادة في صيانة المعدات الثقيلة بالمملكة العربية السعودية، والتزامنا الراسخ بالجودة والاحترافية الصناعية."
+                keywords="رؤية 2030، صيانة معدات ثقيلة، ريادة صناعية، المساعد المبدع، جودة عالمية"
+            />
+            {/* Powerful Hero Header - Balanced Height */}
+            <section className="relative h-[55vh] min-h-[550px] flex items-center justify-center overflow-hidden bg-primary">
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/vision-bg.png"
-                        alt="Vision"
+                        src="/about-workshop.png"
+                        alt="Vision Facility"
                         className="w-full h-full object-cover grayscale-[0.2] brightness-50"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-background" />
@@ -49,18 +55,18 @@ export default function Vision() {
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ delay: 0.2, duration: 0.8 }}
                     >
-                        <h1 className="text-7xl md:text-9xl font-black text-white mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                        <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white mb-8 tracking-tighter drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
                             رؤيتنا <span className="text-accent">&</span> رسالتنا
                         </h1>
-                        <div className="h-3 w-64 bg-accent mx-auto rounded-full mb-10 shadow-[0_0_40px_rgba(255,193,7,0.7)]" />
-                        <p className="text-3xl md:text-4xl text-white max-w-5xl mx-auto font-black leading-tight drop-shadow-2xl">
+                        <div className="h-2 md:h-3 w-40 md:w-64 bg-accent mx-auto rounded-full mb-10 shadow-[0_0_40px_rgba(255,193,7,0.7)]" />
+                        <p className="text-2xl md:text-3xl lg:text-4xl text-white max-w-5xl mx-auto font-black leading-tight drop-shadow-2xl">
                             نصيغ مستقبل صيانة المعدات الثقيلة برؤية طموحة تلبي تطلعات رؤية المملكة 2030
                         </p>
                     </motion.div>
                 </motion.div>
             </section>
 
-            <div className="container px-4 -mt-32 relative z-20">
+            <div className="container px-4 py-24 relative z-20 overflow-x-hidden max-w-7xl mx-auto">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -99,18 +105,18 @@ export default function Vision() {
                         </div>
                         <div className="relative group order-1 lg:order-2">
                             <div className="absolute inset-0 bg-accent/40 rounded-[4.5rem] -rotate-6 transform group-hover:rotate-0 transition-transform duration-1000 blur-md" />
-                            <div className="aspect-square lg:aspect-[4/5] rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] border-[12px] border-white relative z-10">
+                            <div className="aspect-square lg:aspect-[4/5] rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] border-[8px] md:border-[12px] border-white relative z-10">
                                 <img
-                                    src="/vision-bg.png"
-                                    alt="Vision"
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
+                                    src="/about-workshop.png"
+                                    alt="Vision Progress"
+                                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-[2000ms]"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-80" />
                             </div>
                             {/* Decorative Badge */}
-                            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary rounded-[3rem] p-8 flex flex-col items-center justify-center text-white shadow-2xl z-20 rotate-12 group-hover:rotate-0 transition-transform duration-500 border-4 border-accent">
-                                <div className="text-4xl font-black text-accent">2030</div>
-                                <div className="text-xs font-bold text-center mt-1">رؤية المستقبل</div>
+                            <div className="absolute bottom-4 left-10 md:-bottom-10 md:-left-1 w-28 h-28 md:w-40 md:h-40 bg-primary rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-8 flex flex-col items-center justify-center text-white shadow-2xl z-20 rotate-12 group-hover:rotate-0 transition-transform duration-500 border-4 border-accent">
+                                <div className="text-2xl md:text-4xl font-black text-accent">2030</div>
+                                <div className="text-[10px] md:text-xs font-bold text-center mt-1">رؤية المستقبل</div>
                             </div>
                         </div>
                     </motion.section>
@@ -119,18 +125,18 @@ export default function Vision() {
                     <motion.section variants={itemVariants} className="grid lg:grid-cols-2 gap-20 items-center">
                         <div className="relative group">
                             <div className="absolute inset-0 bg-primary/40 rounded-[4.5rem] rotate-6 transform group-hover:rotate-0 transition-transform duration-1000 blur-md" />
-                            <div className="aspect-square lg:aspect-[4/5] rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] border-[12px] border-white relative z-10">
+                            <div className="aspect-square lg:aspect-[4/5] rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.4)] border-[8px] md:border-[12px] border-white relative z-10">
                                 <img
-                                    src="/mission-bg.png"
-                                    alt="Mission"
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
+                                    src="/precision-bg.png"
+                                    alt="Mission Excellence"
+                                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-[2000ms]"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-accent/50 via-transparent to-transparent opacity-80" />
                             </div>
                             {/* Decorative Badge */}
-                            <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent rounded-[3rem] p-8 flex flex-col items-center justify-center text-primary shadow-2xl z-20 -rotate-12 group-hover:rotate-0 transition-transform duration-500 border-4 border-primary">
-                                <Zap className="h-12 w-12 mb-2 animate-pulse" />
-                                <div className="text-sm font-black text-center">أعلى جودة</div>
+                            <div className="absolute top-4 z-20 right-4 md:-top-10 md:-right-1 w-28 h-28 md:w-40 md:h-40 bg-accent rounded-[2.5rem] md:rounded-[3rem] p-6 md:p-8 flex flex-col items-center justify-center text-primary shadow-2xl z-20 -rotate-12 group-hover:rotate-0 transition-transform duration-500 border-4 border-primary">
+                                <Zap className="h-8 w-8 md:h-12 md:w-12 mb-2 animate-pulse" />
+                                <div className="text-[10px] md:text-sm font-black text-center">أعلى جودة</div>
                             </div>
                         </div>
                         <div className="space-y-10">
@@ -176,7 +182,7 @@ export default function Vision() {
                             <h2 className="text-7xl md:text-9xl font-black text-white mb-10 tracking-tighter drop-shadow-2xl">قيمنا الجوهرية</h2>
                             <p className="text-3xl text-white mb-24 font-bold max-w-3xl mx-auto leading-relaxed">الأسس الفولاذية التي نبني عليها ريادتنا وشراكاتنا المستدامة.</p>
 
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-10">
                                 {[
                                     { name: 'الجودة', icon: '💎', color: 'bg-blue-600' },
                                     { name: 'الأمانة', icon: '🤝', color: 'bg-emerald-600' },
@@ -187,11 +193,11 @@ export default function Vision() {
                                     <motion.div
                                         key={i}
                                         whileHover={{ y: -20, scale: 1.05 }}
-                                        className="bg-white/10 backdrop-blur-3xl p-12 rounded-[4rem] border border-white/10 hover:bg-white/20 transition-all group shadow-2xl relative overflow-hidden"
+                                        className="bg-white/10 backdrop-blur-3xl p-8 md:p-12 rounded-[3rem] md:rounded-[4rem] border border-white/10 hover:bg-white/20 transition-all group shadow-2xl relative overflow-hidden"
                                     >
                                         <div className={`absolute inset-0 ${val.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
-                                        <div className="text-7xl mb-8 group-hover:scale-125 transition-transform duration-700 drop-shadow-2xl">{val.icon}</div>
-                                        <div className="font-black text-accent text-3xl tracking-tight drop-shadow-sm">{val.name}</div>
+                                        <div className="text-5xl md:text-7xl mb-6 md:mb-8 group-hover:scale-125 transition-transform duration-700 drop-shadow-2xl">{val.icon}</div>
+                                        <div className="font-black text-accent text-2xl md:text-3xl tracking-tight drop-shadow-sm">{val.name}</div>
                                     </motion.div>
                                 ))}
                             </div>

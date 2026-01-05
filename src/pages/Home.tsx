@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { SEO } from "@/components/SEO";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import { BadgeCheck, Wrench, ShieldCheck, Truck, ArrowLeft, Phone } from "lucide-react";
@@ -23,11 +24,15 @@ const itemVariants = {
 export default function Home() {
     return (
         <div className="flex flex-col min-h-screen">
+            <SEO
+                title="الرئيسية"
+                description="مركز المساعد المبدع بالرياض - رائدون في صيانة المعدات الثقيلة والهيدروليك. نقدم أفضل حلول الإصلاح بمنتهى الدقة والاحترافية."
+            />
             <Hero />
 
             {/* About Section Snippet */}
             {/* About Section Snippet */}
-            <section className="py-24 md:py-40 bg-background relative overflow-hidden">
+            <section className="py-24 md:py-40 bg-background relative overflow-hidden overflow-x-hidden">
                 <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-0 translate-x-1/2 -translate-y-1/2"></div>
                 <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[100px] -z-0 -translate-x-1/2 translate-y-1/2"></div>
 
@@ -86,8 +91,8 @@ export default function Home() {
                                     </div>
                                 </div>
                                 {/* Floating element */}
-                                <div className="absolute -top-6 -left-6 w-24 h-24 bg-accent rounded-2xl flex items-center justify-center shadow-[0_10px_30px_rgba(255,193,7,0.4)] rotate-12 hover:rotate-0 transition-transform cursor-default">
-                                    <BadgeCheck className="h-12 w-12 text-primary" />
+                                <div className="absolute top-4 left-4 md:-top-6 md:-left-6 w-20 h-20 md:w-24 md:h-24 bg-accent rounded-2xl flex items-center justify-center shadow-[0_10px_30px_rgba(255,193,7,0.4)] rotate-12 hover:rotate-0 transition-transform cursor-default z-20">
+                                    <BadgeCheck className="h-10 w-10 md:h-12 md:w-12 text-primary" />
                                 </div>
                             </motion.div>
                         </div>

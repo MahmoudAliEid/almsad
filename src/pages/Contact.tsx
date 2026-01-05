@@ -1,6 +1,7 @@
 import { MapPin, Phone, Clock, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 export default function Contact() {
     const itemVariants: Variants = {
@@ -14,6 +15,10 @@ export default function Contact() {
 
     return (
         <div className="min-h-screen bg-background pt-16 pb-24">
+            <SEO
+                title="تواصل معنا"
+                description="اتصل بنا الآن أو قم بزيارتنا في المنطقة الصناعية بالرياض. فريقنا الفني جاهز لتقديم الدعم الفوري وصيانة معداتكم بأسرع وقت."
+            />
             <div className="container px-4">
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}

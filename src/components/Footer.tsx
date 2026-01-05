@@ -9,7 +9,13 @@ export function Footer() {
 
                     {/* About */}
                     <div>
-                        <h3 className="text-xl font-bold mb-4 text-accent">المساعد المبدع</h3>
+                        <Link to="/" className="inline-block mb-8 group">
+                            <img
+                                src="/logo.png"
+                                alt="مركز المساعد المبدع"
+                                className="h-24 md:h-32 lg:h-36 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-2xl mix-blend-screen"
+                            />
+                        </Link>
                         <p className="text-primary-foreground/80 leading-relaxed text-sm">
                             ورشة متخصصة في صيانة وإصلاح المعدات الثقيلة، نقدم خدمات فنية عالية
                             الجودة بأيدي فنيين ذوي خبرة.

@@ -1,6 +1,7 @@
 import { ServiceCard } from "@/components/ServiceCard";
 import { Wrench, Zap, Settings, ShoppingBag, Shield, Truck } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
+import { SEO } from "@/components/SEO";
 
 export default function Services() {
     const services = [
@@ -82,6 +83,10 @@ export default function Services() {
 
     return (
         <div className="min-h-screen bg-background pt-12 pb-24">
+            <SEO
+                title="خدماتنا"
+                description="استعرض خدمات صيانة الهيدروليك، ميكانيكا المعدات الثقيلة، كهرباء الديزل، وبيع قطع الغيار الأصلية في مركز المساعد المبدع."
+            />
             <div className="container px-4">
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}

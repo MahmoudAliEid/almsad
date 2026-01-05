@@ -31,32 +31,28 @@ export function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300",
                 isScrolled
-                    ? "bg-background/80 backdrop-blur-md border-b shadow-sm py-2"
+                    ? "bg-primary shadow-lg border-b border-white/5 py-1"
                     : isHome
-                        ? "bg-transparent border-transparent py-4 text-white"
-                        : "bg-background/50 backdrop-blur-sm border-b border-transparent py-4"
+                        ? "bg-transparent border-transparent py-3 text-white"
+                        : "bg-primary/95 backdrop-blur-sm shadow-md py-2"
             )}
         >
             <div className="container flex items-center justify-between px-4 md:px-8">
                 {/* Logo */}
-                <Link to="/" className="flex items-center gap-2 group">
-                    <div className="h-10 w-10 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
-                        M
-                    </div>
-                    <span className={cn(
-                        "text-xl font-bold transition-colors",
-                        (isScrolled || !isHome) ? "text-primary" : "text-white"
-                    )}>
-                        مركز المساعد المبدع
-                    </span>
+                <Link to="/" className="flex items-center group">
+                    <img
+                        src="/logo.png"
+                        alt="مركز المساعد المبدع"
+                        className="h-16 sm:h-16 md:h-20 lg:h-24 w-auto object-contain transition-all duration-500 group-hover:scale-105 drop-shadow-xl mix-blend-screen"
+                    />
                 </Link>
 
                 {/* Desktop Menu */}
                 <div className={cn(
                     "hidden md:flex md:items-center md:gap-1 p-1 rounded-full border transition-all",
                     (isScrolled || !isHome)
-                        ? "bg-muted/50 border-border"
-                        : "bg-white/5 backdrop-blur-sm border-white/10"
+                        ? "bg-black/80 border-white/20 backdrop-blur-xl shadow-2xl"
+                        : "bg-white/10 backdrop-blur-xl border-white/20"
                 )}>
                     {links.map((link) => {
                         const isActive = location.pathname === link.href;
@@ -67,8 +63,8 @@ export function Navbar() {
                                 className={cn(
                                     "relative px-4 py-2 text-sm font-medium rounded-full transition-colors",
                                     isActive
-                                        ? (isScrolled || !isHome) ? "text-primary font-bold" : "text-accent font-bold"
-                                        : (isScrolled || !isHome) ? "text-muted-foreground hover:text-primary" : "text-white/80 hover:text-white"
+                                        ? "text-accent font-bold"
+                                        : "text-white"
                                 )}
                             >
                                 {isActive && (
@@ -76,12 +72,15 @@ export function Navbar() {
                                         layoutId="navbar-indicator"
                                         className={cn(
                                             "absolute inset-0 rounded-full",
-                                            (isScrolled || !isHome) ? "bg-primary/10" : "bg-white/20"
+                                            "bg-accent/20"
                                         )}
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
-                                <span className="relative z-10">{link.name}</span>
+                                <span className={cn(
+                                    "relative z-10",
+                                    isActive && "drop-shadow-[0_0_12px_rgba(255,193,7,0.8)]"
+                                )}>{link.name}</span>
                             </Link>
                         );
                     })}
@@ -95,21 +94,24 @@ export function Navbar() {
 
                 {/* Mobile Menu */}
                 <div className="flex items-center gap-2 md:hidden">
-                    <Button variant="ghost" size="icon" asChild className={cn((isScrolled || !isHome) ? "text-primary" : "text-white")}>
+                    <Button variant="ghost" size="icon" asChild className={cn((isScrolled || !isHome) ? "text-white" : "text-white")}>
                         <a href="tel:+966500000000"><Phone className="h-5 w-5" /></a>
                     </Button>
                     <Sheet open={isOpen} onOpenChange={setIsOpen}>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className={cn((isScrolled || !isHome) ? "text-primary" : "text-white")}>
-                                <Menu className="h-6 w-6" />
+                            <Button variant="ghost" size="icon" className={cn((isScrolled || !isHome) ? "text-white" : "text-white")}>
+                                <Menu className="h-6 w-6 " />
                                 <span className="sr-only">Toggle menu</span>
                             </Button>
                         </SheetTrigger>
                         <SheetContent side="left" className="w-[300px]">
                             <div className="flex flex-col gap-8 py-8">
-                                <Link to="/" className="text-2xl font-bold text-primary flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                                    <div className="h-10 w-10 bg-primary text-white rounded-lg flex items-center justify-center text-lg">M</div>
-                                    المساعد المبدع
+                                <Link to="/" className="w-fit mb-6" onClick={() => setIsOpen(false)}>
+                                    <img
+                                        src="/logo.png"
+                                        alt="مركز المساعد المبدع"
+                                        className="h-20 w-auto object-contain drop-shadow-lg mix-blend-screen"
+                                    />
                                 </Link>
                                 <div className="flex flex-col gap-2">
                                     {links.map((link) => (

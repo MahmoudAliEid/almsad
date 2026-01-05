@@ -18,7 +18,7 @@ export function Layout() {
         <div className="flex flex-col min-h-screen font-sans bg-background text-foreground antialiased selection:bg-accent/30">
             <div className="relative flex flex-col min-h-screen">
                 <Navbar />
-                <main className={cn("flex-1", !isHome && "pt-20")}>
+                <main className={cn("flex-1", !isHome && "pt-28")}>
                     <Outlet />
                 </main>
                 <Footer />

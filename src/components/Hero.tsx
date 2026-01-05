@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export function Hero() {
     return (
-        <section className="relative bg-navy-900 text-white overflow-hidden min-h-[85vh] flex items-center justify-center">
+        <section className="relative bg-navy-900 text-white overflow-hidden min-h-[85vh] flex items-center justify-center overflow-hidden">
             {/* Background with overlay and gradient */}
             <div className="absolute inset-0 z-0">
                 <img
@@ -18,7 +18,7 @@ export function Hero() {
                 <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
             </div>
 
-            <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center px-4 py-20">
+            <div className="relative z-10 grid lg:grid-cols-2 gap-16 items-center px-4 py-32 md:py-48">
 
                 {/* Text Content */}
                 <motion.div
@@ -35,14 +35,14 @@ export function Hero() {
                         مركز المساعد المبدع - خبرة تزيد عن 20 عاماً
                     </div>
 
-                    <h1 className="text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-tight drop-shadow-2xl">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight leading-tight drop-shadow-2xl">
                         شريكك الأول في <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-l from-accent to-yellow-300">
                             صيانة المعدات
                         </span>
                     </h1>
 
-                    <p className="text-xl md:text-3xl text-white max-w-2xl leading-relaxed font-bold drop-shadow-lg">
+                    <p className="text-lg md:text-3xl text-white max-w-2xl leading-relaxed font-bold drop-shadow-lg">
                         نقدم حلولاً متكاملة لصيانة المعدات الثقيلة بأعلى معايير الجودة العالمية،
                         مع ضمان حقيقي وسرعة استثنائية في التنفيذ.
                     </p>
@@ -57,10 +57,10 @@ export function Hero() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto pt-6">
-                        <Button size="lg" variant="accent" className="font-bold text-xl h-16 px-10 shadow-2xl shadow-accent/30 hover:scale-105 active:scale-95 transition-all" asChild>
+                        <Button size="lg" variant="accent" className="font-bold text-lg md:text-xl h-14 md:h-16 px-8 md:px-10 shadow-2xl shadow-accent/30 hover:scale-105 active:scale-95 transition-all" asChild>
                             <Link to="/contact">تواصل معنا الآن</Link>
                         </Button>
-                        <Button size="lg" variant="outline" className="text-xl h-16 px-10 bg-white/5 backdrop-blur-md text-white border-white/30 hover:bg-white/15 hover:border-white/50 transition-all font-bold group" asChild>
+                        <Button size="lg" variant="outline" className="text-lg md:text-xl h-14 md:h-16 px-8 md:px-10 bg-white/5 backdrop-blur-md text-white border-white/30 hover:bg-white/15 hover:border-white/50 transition-all font-bold group" asChild>
                             <Link to="/services">
                                 <span>خدماتنا الفنية</span>
                                 <ArrowLeft className="mr-3 h-6 w-6 group-hover:-translate-x-2 transition-transform" />
