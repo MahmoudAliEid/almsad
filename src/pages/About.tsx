@@ -79,7 +79,7 @@ export default function About() {
                                         <card.icon className="h-10 w-10 text-primary" />
                                     </div>
                                     <h3 className={`text-3xl font-black ${card.color.includes('primary') ? 'text-accent' : 'text-primary'}`}>{card.title}</h3>
-                                    <p className={`text-lg font-bold ${card.color.includes('primary') ? 'text-white/80' : 'text-foreground/80'}`}>{card.text}</p>
+                                    <p className={`text-lg font-bold text-foreground/80'}`}>{card.text}</p>
                                 </CardContent>
                             </Card>
                         ))}
