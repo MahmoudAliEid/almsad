@@ -169,7 +169,8 @@ export default function OurVision() {
                         <div className="relative">
                             <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-700">
                                 <img
-                                    src="/philosophy-bg.png"
+                                    src="/about-workshop.png
+                                    "
                                     alt={t("vision.philosophy_title")}
                                     className="w-full h-full object-cover"
                                 />
