@@ -75,8 +75,6 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
-    direction: rtl;
-    text-align: right;
   }
   
   /* Smooth scrolling */

@@ -1,134 +1,128 @@
-import { MapPin, Phone, Clock, Mail, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { motion, type Variants } from "framer-motion";
-import { SEO } from "@/components/SEO";
+import { motion } from "framer-motion";
+import { Mail, Phone, MapPin, Clock, MessageSquare, Send } from "lucide-react";
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { SEO } from "../components/SEO";
+import { useTranslation } from "react-i18next";
+import { cn } from "../lib/utils";
 
 export default function Contact() {
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: (custom: number) => ({
-            opacity: 1,
-            y: 0,
-            transition: { delay: custom * 0.2, duration: 0.6, ease: "easeOut" }
-        })
-    };
+    const { t, i18n } = useTranslation();
+    const isRtl = i18n.language === "ar";
 
     return (
-        <div className="min-h-screen bg-background pt-16 pb-24">
+        <div className="min-h-screen bg-background pt-16 pb-32">
             <SEO
-                title="تواصل معنا"
-                description="اتصل بنا الآن أو قم بزيارتنا في المنطقة الصناعية بالرياض. فريقنا الفني جاهز لتقديم الدعم الفوري وصيانة معداتكم بأسرع وقت."
+                title={t("contact.title")}
+                description={t("contact.desc")}
             />
             <div className="container px-4">
                 <motion.div
-                    initial={{ opacity: 0, y: -30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-center mb-24 space-y-6"
+                    className="text-center mb-20 space-y-6"
                 >
-                    <h1 className="text-6xl md:text-9xl font-black text-primary tracking-tighter">تواصل <span className="text-accent underline decoration-[12px] underline-offset-[16px]">معنا</span></h1>
-                    <div className="h-3 w-40 bg-accent mx-auto rounded-full shadow-[0_0_30px_rgba(255,193,7,0.5)]" />
-                    <p className="text-3xl md:text-4xl text-foreground font-black max-w-4xl mx-auto leading-tight">
-                        نحن جاهزون للاستجابة لاتصالاتكم وتقديم الدعم الفني الفوري.
+                    <h1 className="text-5xl md:text-8xl font-black text-primary tracking-tighter">
+                        {t("contact.title")} <span className="text-accent underline decoration-8 underline-offset-8">{t("contact.title_accent")}</span>
+                    </h1>
+                    <p className="text-2xl md:text-3xl text-foreground/80 font-bold max-w-3xl mx-auto">
+                        {t("contact.subtitle")}
                     </p>
                 </motion.div>
 
-                <div className="grid lg:grid-cols-12 gap-16">
-
-                    {/* Contact Info Side with Heavy Power */}
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                    {/* Contact Form */}
                     <motion.div
-                        variants={itemVariants}
-                        initial="hidden"
-                        animate="visible"
-                        custom={1}
-                        className="lg:col-span-12 xl:col-span-5 space-y-10"
+                        initial={{ opacity: 0, x: isRtl ? 50 : -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.2 }}
                     >
-                        <div className="bg-primary text-white rounded-[3.5rem] p-12 md:p-16 shadow-[0_40px_80px_-15px_rgba(0,0,0,0.4)] space-y-12 relative overflow-hidden group">
-                            {/* Decorative background circle */}
-                            <div className="absolute top-0 right-0 w-80 h-80 bg-accent/10 rounded-full -mr-32 -mt-32 blur-3xl group-hover:bg-accent/20 transition-colors duration-700" />
-
-                            <div className="space-y-12 relative z-10">
-                                <div className="flex items-start gap-8">
-                                    <div className="p-5 bg-accent rounded-3xl text-primary shadow-xl shadow-accent/20 rotate-6 group-hover:rotate-0 transition-all duration-500">
-                                        <MapPin className="h-10 w-10" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="font-black text-3xl text-accent mb-3">الموقع الرئيسي</h3>
-                                        <p className="text-2xl text-white font-bold leading-relaxed mb-4">المملكة العربية السعودية، الرياض، المنطقة الصناعية</p>
-                                        <Button variant="accent" className="rounded-2xl h-14 px-8 font-black text-lg shadow-2xl hover:scale-105 active:scale-95 transition-all" asChild>
-                                            <a href="https://maps.app.goo.gl/tncrcjbBewwxuT346" target="_blank" rel="noreferrer">
-                                                فتح خرائط جوجل <Send className="mr-3 h-5 w-5" />
-                                            </a>
-                                        </Button>
-                                    </div>
+                        <Card className="border-none shadow-[0_32px_64px_-15px_rgba(0,0,0,0.1)] rounded-[3rem] overflow-hidden">
+                            <CardContent className="p-12 space-y-10">
+                                <div className="space-y-2 text-start">
+                                    <h2 className="text-3xl font-black text-primary">{t("contact.form_title")}</h2>
+                                    <p className="text-lg text-muted-foreground font-bold">{t("contact.form_subtitle")}</p>
                                 </div>
 
-                                <div className="flex items-start gap-8 border-t border-white/10 pt-12">
-                                    <div className="p-5 bg-accent rounded-3xl text-primary shadow-xl shadow-accent/20 -rotate-6 group-hover:rotate-0 transition-all duration-500">
-                                        <Phone className="h-10 w-10" />
+                                <form className="space-y-6">
+                                    <div className="grid md:grid-cols-2 gap-6">
+                                        <div className="space-y-3">
+                                            <label className="text-md font-black text-primary block text-start">{t("contact.form_name")}</label>
+                                            <Input placeholder={t("contact.form_name_placeholder")} className="h-14 rounded-2xl bg-muted/50 border-none focus-visible:ring-accent text-lg" />
+                                        </div>
+                                        <div className="space-y-3">
+                                            <label className="text-md font-black text-primary block text-start">{t("contact.form_phone")}</label>
+                                            <Input placeholder={t("contact.form_phone_placeholder")} className="h-14 rounded-2xl bg-muted/50 border-none focus-visible:ring-accent text-lg" />
+                                        </div>
                                     </div>
-                                    <div className="flex-1">
-                                        <h3 className="font-black text-3xl text-accent mb-3">اتصال مباشر</h3>
-                                        <a href="tel:+966500000000" dir="ltr" className="text-4xl font-black hover:text-accent transition-colors block text-left mb-2 drop-shadow-lg">
-                                            +966 50 000 0000
-                                        </a>
-                                        <p className="text-white/70 font-bold">مهندس/ محمود علي - المدير الفني</p>
+                                    <div className="space-y-3">
+                                        <label className="text-md font-black text-primary block text-start">{t("contact.form_service")}</label>
+                                        <Input placeholder={t("contact.form_service_placeholder")} className="h-14 rounded-2xl bg-muted/50 border-none focus-visible:ring-accent text-lg" />
                                     </div>
-                                </div>
-
-                                <div className="flex items-start gap-8 border-t border-white/10 pt-12">
-                                    <div className="p-5 bg-accent rounded-3xl text-primary shadow-xl shadow-accent/20 rotate-12 group-hover:rotate-0 transition-all duration-500">
-                                        <Mail className="h-10 w-10" />
+                                    <div className="space-y-3">
+                                        <label className="text-md font-black text-primary block text-start">{t("contact.form_message")}</label>
+                                        <Textarea placeholder={t("contact.form_message_placeholder")} className="min-h-[150px] rounded-2xl bg-muted/50 border-none focus-visible:ring-accent text-lg resize-none" />
                                     </div>
-                                    <div className="flex-1">
-                                        <h3 className="font-black text-3xl text-accent mb-3">المراسلة</h3>
-                                        <a href="mailto:info@almsad.com" className="text-2xl font-black text-white hover:text-accent transition-colors underline decoration-4 underline-offset-8">
-                                            info@almsad.com
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-start gap-8 border-t border-white/10 pt-12">
-                                    <div className="p-5 bg-accent rounded-3xl text-primary shadow-xl shadow-accent/20 -rotate-12 group-hover:rotate-0 transition-all duration-500">
-                                        <Clock className="h-10 w-10" />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="font-black text-3xl text-accent mb-3">أوقات العمل</h3>
-                                        <p className="text-2xl text-white font-bold leading-relaxed">السبت - الخميس: 8:00 صباحاً - 6:00 مساءً</p>
-                                        <div className="inline-block mt-4 px-6 py-2 bg-destructive/20 border border-destructive/30 rounded-full text-destructive font-black text-lg">الجمعة: مغلق</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                    <Button className="w-full h-16 text-xl font-black rounded-2xl bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20 transition-all group">
+                                        {t("contact.form_submit")}
+                                        <Send className={cn("h-6 w-6 transition-transform group-hover:scale-110 ms-3", isRtl ? "-rotate-45" : "rotate-45")} />
+                                    </Button>
+                                </form>
+                            </CardContent>
+                        </Card>
                     </motion.div>
 
-                    {/* Map Side with Professional Frame */}
+                    {/* Contact Info & Map */}
                     <motion.div
-                        variants={itemVariants}
-                        initial="hidden"
-                        animate="visible"
-                        custom={2}
-                        className="lg:col-span-12 xl:col-span-7"
+                        initial={{ opacity: 0, x: isRtl ? -50 : 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="space-y-10"
                     >
-                        <div className="h-[600px] lg:h-[850px] w-full bg-muted rounded-[4rem] overflow-hidden border-[16px] border-white shadow-[0_60px_100px_-20px_rgba(0,0,0,0.3)] relative group">
+                        <div className="grid sm:grid-cols-2 gap-6">
+                            {[
+                                { icon: Phone, title: t("contact.call_us"), detail: "+966 50 123 4567", color: "text-blue-600 bg-blue-50" },
+                                { icon: Mail, title: t("contact.email_us"), detail: "info@almsad.com", color: "text-red-600 bg-red-50" },
+                                { icon: MapPin, title: t("contact.visit_us"), detail: t("contact.address_detail"), color: "text-green-600 bg-green-50" },
+                                { icon: Clock, title: t("contact.opening_hours"), detail: t("contact.opening_hours_detail"), color: "text-amber-600 bg-amber-50" }
+                            ].map((item, i) => (
+                                <Card key={i} className="border-none shadow-lg rounded-3xl overflow-hidden hover:shadow-xl transition-shadow">
+                                    <CardContent className="p-8 flex items-start gap-5">
+                                        <div className={`w-14 h-14 ${item.color} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm`}>
+                                            <item.icon className="h-7 w-7" />
+                                        </div>
+                                        <div className={cn("space-y-1", isRtl ? "text-right" : "text-left")}>
+                                            <h3 className="font-black text-primary text-lg">{item.title}</h3>
+                                            <p className="text-muted-foreground font-bold leading-relaxed">{item.detail}</p>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+
+                        {/* Map Placeholder */}
+                        <div className="aspect-video rounded-[3rem] overflow-hidden shadow-2xl relative group border-8 border-white">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14498.055866657924!2d46.7725925!3d24.7132955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f012457805179%3A0xe542617f18579979!2z2KfZhNix2YrYp9i2!5e0!3m2!1sar!2ssa!4v1700000000000!5m2!1sar!2ssa"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115933.1952467269!2d46.671392!3d24.7135517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d48939b%3A0x60a96412153ff3bb!2z2KfZhNix2YrYp9i2!5e0!3m2!1sar!2ssa!4v1700000000000"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
-                                allowFullScreen={true}
+                                allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                className="grayscale-[30%] hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                                className="grayscale hover:grayscale-0 transition-all duration-700"
                             ></iframe>
-
-                            <div className="absolute top-10 left-10 bg-white p-8 rounded-[3rem] shadow-2xl max-w-md hidden md:block border-b-[8px] border-accent">
-                                <div className="text-2xl font-black text-primary mb-4">نحن في خدمتك</div>
-                                <p className="text-xl text-foreground/80 font-bold leading-relaxed">تفضل بزيارة ورشتنا المتطورة في المنطقة الصناعية واحصل على فحص مجاني لمعداتك من قبل خبراءنا.</p>
-                            </div>
+                            <div className="absolute inset-0 bg-primary/10 pointer-events-none group-hover:opacity-0 transition-opacity" />
                         </div>
-                    </motion.div>
 
+                        {/* CTA WhatsApp */}
+                        <Button className="w-full h-20 rounded-[2rem] bg-[#25D366] hover:bg-[#20ba59] text-white shadow-2xl shadow-green-500/20 flex items-center justify-center gap-4 text-2xl font-black group transition-all hover:scale-[1.02]">
+                            <MessageSquare className="h-8 w-8 fill-current" />
+                            {t("contact.whatsapp_cta")}
+                        </Button>
+                    </motion.div>
                 </div>
             </div>
         </div>

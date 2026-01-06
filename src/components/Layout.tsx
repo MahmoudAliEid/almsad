@@ -2,7 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { useEffect } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 export function Layout() {
     const { pathname } = useLocation();

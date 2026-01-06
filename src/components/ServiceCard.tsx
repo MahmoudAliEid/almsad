@@ -1,45 +1,57 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import React from 'react';
 import { motion } from "framer-motion";
+import { type LucideIcon, CheckCircle2 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
+import { cn } from "../lib/utils";
 
 interface ServiceCardProps {
     title: string;
     description: string;
-    icon: React.ElementType;
-    items?: string[];
-    index?: number;
+    icon: LucideIcon;
+    items: string[];
+    index: number;
 }
 
-export function ServiceCard({ title, description, icon: Icon, items, index = 0 }: ServiceCardProps) {
+export function ServiceCard({ title, description, icon: Icon, items, index }: ServiceCardProps) {
+    const { i18n } = useTranslation();
+    const isRtl = i18n.language === "ar";
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ y: -5 }}
+            transition={{ delay: index * 0.1 }}
+            whileHover={{ y: -8 }}
+            className="h-full"
         >
-            <Card className="flex flex-col h-full bg-white/50 backdrop-blur-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 border-primary/5 hover:border-accent/30 group overflow-hidden relative rounded-2xl">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -mr-8 -mt-8 transition-all duration-500 group-hover:bg-accent/10 group-hover:scale-110" />
-
-                <CardHeader className="pb-6 relative z-10 p-8">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 shadow-lg group-hover:shadow-primary/20">
-                        <Icon className="h-8 w-8" />
+            <Card className="h-full border-none shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-500 rounded-[2.5rem] overflow-hidden group bg-white">
+                <CardContent className="p-10 flex flex-col h-full space-y-6">
+                    <div className={cn(
+                        "w-20 h-20 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110",
+                        index % 3 === 0 ? "bg-primary text-white" :
+                            index % 3 === 1 ? "bg-accent text-primary" : "bg-muted text-primary"
+                    )}>
+                        <Icon className="h-10 w-10" />
                     </div>
-                    <CardTitle className="text-2xl font-black text-primary group-hover:text-primary/90 transition-colors">{title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-1 relative z-10 px-8 pb-8">
-                    <p className="text-lg text-muted-foreground mb-8 leading-relaxed font-medium">{description}</p>
-                    {items && items.length > 0 && (
-                        <ul className="space-y-4">
-                            {items.map((item, idx) => (
-                                <li key={idx} className="flex items-center gap-3 text-sm font-bold text-foreground/70 group-hover:text-foreground transition-colors">
-                                    <div className="w-2 h-2 rounded-full bg-accent group-hover:scale-125 transition-transform shadow-sm shadow-accent/50" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+
+                    <div className="space-y-4 text-start">
+                        <h3 className="text-3xl font-black text-primary leading-tight group-hover:text-accent transition-colors">
+                            {title}
+                        </h3>
+                        <p className="text-lg text-muted-foreground font-bold leading-relaxed">
+                            {description}
+                        </p>
+                    </div>
+
+                    <div className="space-y-3 pt-4 mt-auto">
+                        {items.map((item, i) => (
+                            <div key={i} className="flex items-center gap-3 font-bold text-foreground/80 flex-row">
+                                <CheckCircle2 className="h-5 w-5 text-accent flex-shrink-0" />
+                                <span>{item}</span>
+                            </div>
+                        ))}
+                    </div>
                 </CardContent>
             </Card>
         </motion.div>

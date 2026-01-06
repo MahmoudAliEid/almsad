@@ -1,77 +1,80 @@
-import { ServiceCard } from "@/components/ServiceCard";
+import { ServiceCard } from "../components/ServiceCard";
 import { Wrench, Zap, Settings, ShoppingBag, Shield, Truck } from "lucide-react";
-import { motion, type Variants } from "framer-motion";
-import { SEO } from "@/components/SEO";
+import { motion } from "framer-motion";
+import { SEO } from "../components/SEO";
+import { useTranslation } from "react-i18next";
 
 export default function Services() {
+    const { t } = useTranslation();
+
     const services = [
         {
-            title: "صيانة الهيدروليك",
-            description: "خدمات شاملة للأنظمة الهيدروليكية لضمان أعلى قوة وأداء.",
+            title: t("services.hydraulic.title"),
+            description: t("services.hydraulic.desc"),
             icon: Wrench,
             items: [
-                "صيانة وإصلاح الطرمبات الهيدروليك",
-                "إصلاح البساتم الهيدروليك",
-                "صيانة الكنترول (Control Valves)",
-                "كبس وصيانة الليّات الهيدروليك",
-                "معالجة التسريبات ورفع كفاءة الأنظمة",
+                t("services.hydraulic.item1"),
+                t("services.hydraulic.item2"),
+                t("services.hydraulic.item3"),
+                t("services.hydraulic.item4"),
+                t("services.hydraulic.item5"),
             ],
         },
         {
-            title: "كهرباء المعدات و الديزل",
-            description: "تشخيص وإصلاح الأعطال الكهربائية بأجهزة متطورة.",
+            title: t("services.electrical.title"),
+            description: t("services.electrical.desc"),
             icon: Zap,
             items: [
-                "صيانة كهرباء المعدات الثقيلة",
-                "فحص الأعطال الإلكترونية",
-                "إصلاح أنظمة التشغيل والشحن",
-                "كهرباء سيارات الديزل والمولدات",
+                t("services.electrical.item1"),
+                t("services.electrical.item2"),
+                t("services.electrical.item3"),
+                t("services.electrical.item4"),
             ],
         },
         {
-            title: "ميكانيكا المعدات الثقيلة",
-            description: "عمرات وصيانة عامة للمحركات وأنظمة الحركة.",
+            title: t("services.mechanical.title"),
+            description: t("services.mechanical.desc"),
             icon: Settings,
             items: [
-                "صيانة محركات المعدات الثقيلة",
-                "القير والدفرنس",
-                "أنظمة الفرامل",
-                "الصيانة الدورية والوقائية",
+                t("services.mechanical.item1"),
+                t("services.mechanical.item2"),
+                t("services.mechanical.item3"),
+                t("services.mechanical.item4"),
             ],
         },
         {
-            title: "بيع قطع الغيار",
-            description: "توفير قطع الغيار اللازمة بأفضل الأسعار.",
+            title: t("services.parts.title"),
+            description: t("services.parts.desc"),
             icon: ShoppingBag,
             items: [
-                "توفير قطع غيار أصلية وبديلة",
-                "جودة مضمونة",
-                "أسعار منافسة",
+                t("services.parts.item1"),
+                t("services.parts.item2"),
+                t("services.parts.item3"),
             ],
         },
         {
-            title: "الضمان",
-            description: "راحة البال مع ضمان شامل على خدماتنا.",
+            title: t("services.warranty_card.title"),
+            description: t("services.warranty_card.desc"),
             icon: Shield,
             items: [
-                "ضمان على جميع أعمال الصيانة",
-                "التزام بالمواعيد",
-                "متابعة بعد التسليم",
+                t("services.warranty_card.item1"),
+                t("services.warranty_card.item2"),
+                t("services.warranty_card.item3"),
             ],
         },
         {
-            title: "الصيانة المتنقلة",
-            description: "نصلك أينما كنت لتقليل التكاليف ووقت التوقف.",
+            title: t("services.mobile_service.title"),
+            description: t("services.mobile_service.desc"),
             icon: Truck,
             items: [
-                "خدمة الصيانة المتنقلة في مواقع المشاريع",
-                "تقليل التوقف وزيادة الإنتاجية",
-                "فريق جاهز للطوارئ",
+                t("services.mobile_service.item1"),
+                t("services.mobile_service.item2"),
+                t("services.mobile_service.item3"),
             ],
         },
     ];
 
-    const containerVariants: Variants = {
+    const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -84,8 +87,8 @@ export default function Services() {
     return (
         <div className="min-h-screen bg-background pt-12 pb-24">
             <SEO
-                title="خدماتنا"
-                description="استعرض خدمات صيانة الهيدروليك، ميكانيكا المعدات الثقيلة، كهرباء الديزل، وبيع قطع الغيار الأصلية في مركز المساعد المبدع."
+                title={t("services.title")}
+                description={t("services.subtitle")}
             />
             <div className="container px-4">
                 <motion.div
@@ -94,11 +97,12 @@ export default function Services() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="text-center mb-24 space-y-6"
                 >
-                    <h1 className="text-5xl md:text-8xl font-black text-primary tracking-tighter">خدماتنا <span className="text-accent italic">المتميزة</span></h1>
+                    <h1 className="text-5xl md:text-8xl font-black text-primary tracking-tighter">
+                        {t("services.title")} <span className="text-accent italic">{t("services.title_accent")}</span>
+                    </h1>
                     <div className="h-2 w-48 bg-accent mx-auto rounded-full mb-8 shadow-[0_0_20px_rgba(255,193,7,0.4)]" />
                     <p className="text-2xl md:text-3xl text-foreground font-bold max-w-4xl mx-auto leading-relaxed">
-                        نقدم مجموعة متكاملة من خدمات الصيانة والإصلاح لجميع أنواع المعدات الثقيلة،
-                        مع التركيز المطلق على الجودة والسرعة الفائقة.
+                        {t("services.subtitle")}
                     </p>
                 </motion.div>
 

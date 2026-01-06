@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Our Services",
+    "vision": "Our Vision",
+    "contact": "Contact Us",
+    "request_service": "Request Service",
+    "request_service_now": "Request Service Now"
+  },
+  "footer": {
+    "about_title": "About Center",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact Info",
+    "follow_us": "Follow Us",
+    "rights": "All rights reserved.",
+    "developed_by": "Developed and Designed by",
+    "saudi_arabia": "Saudi Arabia",
+    "riyadh_industrial": "Riyadh, Industrial Area"
+  },
+  "home": {
+    "seo": {
+      "title": "Home",
+      "description": "Al-Musaed Al-Mobdaa Center in Riyadh - Leaders in heavy equipment and hydraulic maintenance. We provide the best repair solutions with utmost accuracy and professionalism."
+    },
+    "hero": {
+      "badge": "Our Journey & Experience",
+      "title_part1": "We are the partner you",
+      "title_part2": "trust in maintaining",
+      "title_accent": "Equipment",
+      "description": "Al-Musaed Al-Mobdaa Center is a specialized workshop for maintaining and repairing heavy equipment. We provide high-quality technical services by experienced technicians, with a commitment to accuracy, speed, and providing a warranty on all executed works.",
+      "projects_completed": "Completed Projects",
+      "years_experience": "Years of Experience",
+      "explore_more": "Discover more about us",
+      "precision_title": "Precision in Performance",
+      "precision_desc": "We use the latest international inspection and programming devices"
+    },
+    "services_highlight": {
+      "title": "Our Featured Services",
+      "subtitle": "Integrated solutions for all types of heavy equipment",
+      "view_all": "View all services"
+    },
+    "warranty": {
+      "title_part1": "We guarantee quality",
+      "title_accent": "and Professionalism",
+      "title_part2": "in every move",
+      "description": "We don’t just fix equipment; we restore it to its maximum efficiency. Our commitment to quality begins with accurate diagnosis and ends with a comprehensive warranty that gives you peace of mind.",
+      "free_consultation": "Get a free consultation",
+      "call_us": "Call us directly"
+    }
+  },
+  "about": {
+    "title": "About",
+    "title_accent": "Us",
+    "subtitle": "The driving force behind your heavy equipment efficiency with the highest standards of global perfection.",
+    "content_title": "Al-Musaed Al-Mobdaa Center",
+    "content_p1": "It is not just a maintenance workshop, but an engineering landmark established to be the backbone of equipment in the construction and contracting sector in the Kingdom.",
+    "content_p2": "We are proud of our elite team of engineers and technicians who have dedicated their lives to mastering the art of heavy equipment maintenance.",
+    "content_p3": "We are characterized by a strong commitment to deadlines, and absolute technical transparency in presenting solutions and prices, to restore full power and performance to your equipment.",
+    "card_experience_title": "Deep Experience",
+    "card_experience_text": "Decades of technical excellence and leadership in the Saudi market.",
+    "card_elite_title": "Technical Elite",
+    "card_elite_text": "Internationally trained engineering cadres to handle the most complex failures.",
+    "card_warranty_title": "Real Warranty",
+    "card_warranty_text": "We trust our work, and therefore we give you a warranty that gives you peace of mind."
+  },
+  "services": {
+    "title": "Our",
+    "title_accent": "Services",
+    "subtitle": "We offer a comprehensive range of maintenance and repair services for all types of heavy equipment, with absolute focus on quality and super speed.",
+    "hydraulic": {
+      "title": "Hydraulic Maintenance",
+      "desc": "Comprehensive services for hydraulic systems to ensure maximum power and performance.",
+      "item1": "Maintenance and repair of hydraulic pumps",
+      "item2": "Repair of hydraulic pistons",
+      "item3": "Maintenance of Control Valves",
+      "item4": "Pressing and maintenance of hydraulic hoses",
+      "item5": "Treatment of leaks and increasing system efficiency"
+    },
+    "electrical": {
+      "title": "Equipment & Diesel Electricity",
+      "desc": "Diagnosis and repair of electrical faults with advanced devices.",
+      "item1": "Maintenance of heavy equipment electricity",
+      "item2": "Electronic fault inspection",
+      "item3": "Repair of starting and charging systems",
+      "item4": "Electricity for diesel cars and generators"
+    },
+    "mechanical": {
+      "title": "Heavy Equipment Mechanics",
+      "desc": "Overhauls and general maintenance for engines and motion systems.",
+      "item1": "Maintenance of heavy equipment engines",
+      "item2": "Gearbox and differential",
+      "item3": "Braking systems",
+      "item4": "Periodic and preventive maintenance"
+    },
+    "parts": {
+      "title": "Spare Parts Sales",
+      "desc": "Providing the necessary spare parts at the best prices.",
+      "item1": "Providing genuine and alternative spare parts",
+      "item2": "Guaranteed quality",
+      "item3": "Competitive prices"
+    },
+    "warranty_card": {
+      "title": "Warranty",
+      "desc": "Peace of mind with a comprehensive warranty on our services.",
+      "item1": "Warranty on all maintenance works",
+      "item2": "Commitment to deadlines",
+      "item3": "Follow-up after delivery"
+    },
+    "mobile_service": {
+      "title": "Mobile Maintenance",
+      "desc": "We reach you wherever you are to reduce costs and downtime.",
+      "item1": "Mobile maintenance service at project sites",
+      "item2": "Reducing downtime and increasing productivity",
+      "item3": "Ready team for emergencies"
+    }
+  },
+  "vision": {
+    "title": "Our Vision",
+    "title_accent": "Mission",
+    "subtitle": "We shape the future of heavy equipment maintenance with an ambitious vision that meets the aspirations of the Kingdom's Vision 2030",
+    "vision_tag": "Ambition of Leadership",
+    "vision_title": "Our vision towards",
+    "vision_accent": "Leadership",
+    "vision_title_end": "Absolute",
+    "vision_desc": "To be the driving force and the first partner in the heavy equipment maintenance sector, adopting the highest standards of technical innovation to consolidate our position as a global reference in quality and industrial professionalism.",
+    "vision_item1": "Leading the industrial transformation in the Saudi market",
+    "vision_item2": "Localizing the latest global maintenance solutions",
+    "vision_item3": "Empowering national cadres with the highest standards of experience",
+    "mission_tag": "Commitment to Excellence",
+    "mission_title": "Our mission is",
+    "mission_accent": "Professionalism",
+    "mission_title_end": "Superb",
+    "mission_desc": "Providing proactive and innovative maintenance solutions that ensure unprecedented operational efficiency for our customers, with absolute commitment to time accuracy and technical transparency in every repair process.",
+    "mission_speed_title": "Speed of Achievement",
+    "mission_speed_desc": "We achieve the impossible to shorten the time for you.",
+    "mission_precision_title": "Absolute Accuracy",
+    "mission_precision_desc": "There is no room for error in our engineering standards.",
+    "values_title": "Our Core Values",
+    "values_subtitle": "The steel foundations on which we build our leadership and sustainable partnerships.",
+    "value_quality": "Quality",
+    "value_honesty": "Integrity",
+    "value_commitment": "Commitment",
+    "value_development": "Development",
+    "value_satisfaction": "Satisfaction",
+    "value1_title": "Quality",
+    "value1_text": "We adhere to the highest global quality standards in all our maintenance services.",
+    "value2_title": "Integrity",
+    "value2_text": "Transparency and honesty are the foundation of our dealings with all our customers.",
+    "value3_title": "Innovation",
+    "value3_text": "We constantly strive to develop our tools and techniques to provide the best.",
+    "value4_title": "Commitment",
+    "value4_text": "We are committed to delivering on time with the agreed upon quality.",
+    "future_vision": "Future Vision",
+    "highest_quality": "Highest Quality",
+    "philosophy_title": "Our Philosophy",
+    "philosophy_text": "We believe that excellence is not a coincidence, but the result of high intention, sincere effort, and intelligent execution.",
+    "philosophy_item1": "Customer First",
+    "philosophy_item2": "Technical Mastery",
+    "philosophy_item3": "Continuous Improvement",
+    "vision_text": "To be the driving force and the first partner in the heavy equipment maintenance sector, adopting the highest standards of technical innovation to consolidate our position as a global reference in quality and industrial professionalism.",
+    "mission_text": "Providing proactive and innovative maintenance solutions that ensure unprecedented operational efficiency for our customers, with absolute commitment to time accuracy and technical transparency in every repair process."
+  },
+  "contact": {
+    "title": "Contact",
+    "title_accent": "Us",
+    "subtitle": "We are ready to respond to your calls and provide immediate technical support.",
+    "location_title": "Main Location",
+    "location_desc": "Saudi Arabia, Riyadh, Industrial Area",
+    "open_maps": "Open Google Maps",
+    "direct_call": "Direct Call",
+    "technical_manager": "Engr. Mahmoud Ali - Technical Manager",
+    "messaging": "Messaging",
+    "working_hours": "Working Hours",
+    "working_days": "Saturday - Thursday: 8:00 AM - 6:00 PM",
+    "friday_closed": "Friday: Closed",
+    "at_your_service": "We are at your service",
+    "at_your_service_desc": "Visit our advanced workshop in the industrial area and get a free inspection of your equipment by our experts.",
+    "form_title": "Send us a message",
+    "form_subtitle": "We will get back to you as soon as possible.",
+    "form_name": "Full Name",
+    "form_name_placeholder": "Enter your full name",
+    "form_phone": "Phone Number",
+    "form_phone_placeholder": "Enter your phone number",
+    "form_service": "Service Type",
+    "form_service_placeholder": "e.g. Hydraulic Maintenance",
+    "form_message": "Your Message",
+    "form_message_placeholder": "How can we help you?",
+    "form_submit": "Send Message",
+    "email_us": "Email Us",
+    "call_us": "Call Us",
+    "visit_us": "Visit Us",
+    "opening_hours": "Opening Hours",
+    "opening_hours_detail": "Sat - Thu: 8:00 AM - 6:00 PM",
+    "address_detail": "Riyadh, Industrial Area",
+    "whatsapp_cta": "Chat on WhatsApp"
+  },
+  "common": {
+    "language": "العربية",
+    "ar": "Arabic",
+    "en": "English"
+  }
+}

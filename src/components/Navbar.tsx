@@ -1,20 +1,25 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, Phone, ArrowLeft } from "lucide-react";
+import { Menu, Phone, ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-
-const links = [
-    { name: "الصفحة الرئيسية", href: "/" },
-    { name: "من نحن", href: "/about" },
-    { name: "خدماتنا", href: "/services" },
-    { name: "رؤيتنا", href: "/vision" },
-    { name: "تواصل معنا", href: "/contact" },
-];
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Navbar() {
+    const { t, i18n } = useTranslation();
+    const isRtl = i18n.language === "ar";
+
+    const links = [
+        { name: t("nav.home"), href: "/" },
+        { name: t("nav.about"), href: "/about" },
+        { name: t("nav.services"), href: "/services" },
+        { name: t("nav.vision"), href: "/vision" },
+        { name: t("nav.contact"), href: "/contact" },
+    ];
+
     const location = useLocation();
     const [isOpen, setIsOpen] = useState(false);
     const { scrollY } = useScroll();
@@ -42,7 +47,7 @@ export function Navbar() {
                 <Link to="/" className="flex items-center group">
                     <img
                         src="/logo.png"
-                        alt="مركز المساعد المبدع"
+                        alt={t("nav.home")}
                         className="h-16 sm:h-16 md:h-20 lg:h-24 w-auto object-contain transition-all duration-500 group-hover:scale-105 drop-shadow-xl mix-blend-screen"
                     />
                 </Link>
@@ -87,13 +92,15 @@ export function Navbar() {
                 </div>
 
                 <div className="hidden md:flex items-center gap-4">
+                    <LanguageSwitcher />
                     <Button variant="accent" className="font-bold shadow-lg shadow-accent/10 hover:shadow-accent/20" asChild>
-                        <Link to="/contact">اطلب خدمة</Link>
+                        <Link to="/contact">{t("nav.request_service")}</Link>
                     </Button>
                 </div>
 
                 {/* Mobile Menu */}
                 <div className="flex items-center gap-2 md:hidden">
+                    <LanguageSwitcher />
                     <Button variant="ghost" size="icon" asChild className={cn((isScrolled || !isHome) ? "text-white" : "text-white")}>
                         <a href="tel:+966500000000"><Phone className="h-5 w-5" /></a>
                     </Button>
@@ -104,12 +111,12 @@ export function Navbar() {
                                 <span className="sr-only">Toggle menu</span>
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="left" className="w-[300px]">
+                        <SheetContent side={isRtl ? "right" : "left"} className="w-[300px]">
                             <div className="flex flex-col gap-8 py-8">
                                 <Link to="/" className="w-fit mb-6" onClick={() => setIsOpen(false)}>
                                     <img
                                         src="/logo.png"
-                                        alt="مركز المساعد المبدع"
+                                        alt={t("nav.home")}
                                         className="h-20 w-auto object-contain drop-shadow-lg mix-blend-screen"
                                     />
                                 </Link>
@@ -127,11 +134,11 @@ export function Navbar() {
                                             onClick={() => setIsOpen(false)}
                                         >
                                             {link.name}
-                                            {location.pathname === link.href && <ArrowLeft className="h-4 w-4" />}
+                                            {location.pathname === link.href && (isRtl ? <ArrowLeft className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />)}
                                         </Link>
                                     ))}
                                     <Button variant="accent" size="lg" className="w-full mt-6 font-bold" asChild onClick={() => setIsOpen(false)}>
-                                        <Link to="/contact">اطلب خدمة الآن</Link>
+                                        <Link to="/contact">{t("nav.request_service_now")}</Link>
                                     </Button>
                                 </div>
                             </div>
