@@ -3,7 +3,6 @@ import { Target, Eye, Rocket, Heart, Shield, Lightbulb, CheckCircle2 } from "luc
 import { Card, CardContent } from "../components/ui/card";
 import { SEO } from "../components/SEO";
 import { useTranslation } from "react-i18next";
-import { cn } from "../lib/utils";
 
 
 export default function OurVision() {

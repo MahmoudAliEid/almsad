@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { type LucideIcon, CheckCircle2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { useTranslation } from "react-i18next";
 import { cn } from "../lib/utils";
 
 interface ServiceCardProps {
@@ -13,9 +12,6 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ title, description, icon: Icon, items, index }: ServiceCardProps) {
-    const { i18n } = useTranslation();
-    const isRtl = i18n.language === "ar";
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
